@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (email, password) => {
+    cy.request({
+      url: 'https://practice.expandtesting.com/notes/api/users/login',
+      method: 'POST',
+      body: {
+        email,
+        password,
+      }
+    })
+    .then(response => {
+        expect(response.body.success).to.exist;
+        expect(response.body.status).to.exist;
+        expect(response.body.message).to.exist;
+    })
+  });
+  
+
+  

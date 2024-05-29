@@ -1,6 +1,6 @@
 describe('Uploader',()=>{
     const imagePath = 'chat.jpg';
-    const downloadLink = ':nth-child(8) > .link-primary';
+
     it.skip('Quête 4 Cypress',()=>{
         cy.visit('https://filebin.net/') 
         cy.get('#fileField').attachFile(imagePath);
@@ -9,7 +9,7 @@ describe('Uploader',()=>{
         cy.contains("Tar")
       .invoke("attr", "href")
       .then((downloadLink) => {
-        const absulteLink = "https://filebin.net/downloadLink";
+        const absulteLink = "https://filebin.net/" + downloadLink ;
         cy.log(downloadLink);
         cy.downloadFile(
           absulteLink,
@@ -27,13 +27,13 @@ describe('Uploader',()=>{
         cy.contains("Zip")
       .invoke("attr", "href")
       .then((downloadLink) => {
-        const absulteLink = "https://filebin.net/downloadLink";
+        const absulteLink = "https://filebin.net/" + downloadLink ;
         cy.log(downloadLink);
         cy.downloadFile(
           absulteLink,
-          "mydownloads/tarFiles",
+          "mydownloads/ZipFiles",
           "downloadedFromCypress.zip")
-          cy.readFile("mydownloads/tarFiles/downloadedFromCypress.zip");
+          cy.readFile("mydownloads/ZipFiles/downloadedFromCypress.zip");
 
 })
     })

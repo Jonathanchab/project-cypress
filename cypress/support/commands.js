@@ -39,6 +39,9 @@ Cypress.Commands.add('login', (email, password) => {
         expect(response.body.message).to.exist;
     })
   });
+
+  import 'cypress-file-upload'
+require('cypress-downloadfile/lib/downloadFileCommand')
   
 
   

@@ -1,7 +1,7 @@
 describe('Projet magento', () => {
     const firstName = 'tatan';
     const lastName = 'cha';
-    const email = 'tatan23@gmail.com';
+    const email = 'tatan26@gmail.com';
     it('Scenario 1', () => {
       cy.visit('https://magento.softwaretestingboard.com/')
       cy.contains('Create an Account').click()
